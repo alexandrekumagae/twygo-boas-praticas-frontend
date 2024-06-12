@@ -6,7 +6,6 @@ Este projeto consiste em uma aplicação web para listagem e detalhe de cursos f
 
 ## Ferramentas Utilizadas
 
-### SPA:
 - React;
 - TypeScript;
 - Chakra UI;
