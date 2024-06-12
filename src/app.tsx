@@ -17,8 +17,8 @@ export function App() {
   async function fakeFetch() {
     const fakeCourses = Array.from({ length: 12 }, () => ({
       id: faker.string.uuid(),
-      image: faker.image.urlLoremFlickr({ category: 'book'}),
-      title: `Curso de ${faker.commerce.department()}`,
+      image: faker.image.urlLoremFlickr({ category: 'courses'}),
+      title: `Curso sobre ${faker.commerce.department()}`,
       description: faker.lorem.paragraph(),
     }))
 
@@ -32,16 +32,16 @@ export function App() {
   }, [])
 
   return (
-    <Box bgColor='#F1F3F6'>
+    <Box bgColor='#F1F3F6' pb={8}>
       <Container maxW="container.lg">
         <Box py={4}>
-          <Heading as="h1" fontSize='2xl' fontWeight='bold'>Lista de cursos</Heading>
+          <Heading as="h1" fontSize='2xl' fontWeight='bold'>🦉 Twygers School</Heading>
         </Box>
 
-        <Grid templateColumns='repeat(3, 1fr)' gap={4}>
+        <Grid templateColumns='repeat(3, 1fr)' gap={4} minH="100vh">
           {courses.map(course => (
             <Link to={`/curso/${course.id}`} key={course.id}>
-              <Card key={course.id} maxW='sm'>
+              <Card key={course.id} maxW='sm' height="100%">
                 <CardBody pb={0}>
                   <Image
                     src={course.image}

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { App } from './app'
 import { CourseDetail } from './course-detail'
 
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { Text, ChakraProvider, extendTheme, Flex, Divider } from '@chakra-ui/react'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
@@ -31,6 +31,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <RouterProvider router={router} />
+
+      <Flex justifyContent="center" bgColor='#F1F3F6' py={4}>
+        <Text>Copyright © 2024 - Todos os direitos reservados</Text>
+      </Flex>
     </ChakraProvider>
   </React.StrictMode>,
 )
