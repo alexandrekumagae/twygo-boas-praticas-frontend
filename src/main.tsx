@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { App } from './app'
 import { CourseDetail } from './course-detail'
 
-import { Text, ChakraProvider, extendTheme, Flex, Divider } from '@chakra-ui/react'
+import { Text, ChakraProvider, extendTheme, Flex } from '@chakra-ui/react'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 

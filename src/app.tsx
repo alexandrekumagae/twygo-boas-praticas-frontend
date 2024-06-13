@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Box, Button, Card, CardBody, CardFooter, Container, Grid, Heading, Icon, Image, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Card, CardBody, CardFooter, Container, Grid, Heading, Image, Stack, Text } from "@chakra-ui/react"
 import { faker } from '@faker-js/faker/locale/pt_BR'
 import { TriangleDownIcon } from "@chakra-ui/icons"
 import { Link } from "react-router-dom"
