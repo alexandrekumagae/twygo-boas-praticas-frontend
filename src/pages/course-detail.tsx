@@ -10,6 +10,7 @@ interface ModuleProps {
   description: string
   video: string
 }
+
 interface CourseProps {
   id: string
   image: string
@@ -32,7 +33,7 @@ for (let i = 1; i <= 7; i++) {
   });
 }
 
-export function CourseDetail() {
+export default function CourseDetail() {
   const [course, setCourse] = useState<CourseProps>()
   const [currentModule, setCurrentModule] = useState<ModuleProps>(fakeModules[0])
   const [isLoading, setIsLoading] = useState(false)
@@ -90,7 +91,7 @@ export function CourseDetail() {
             ) : (
               <AspectRatio maxW='100%' ratio={5/3}>
                 <iframe
-                  title='naruto'
+                  title={course?.title}
                   src={currentModule.video}
                   allowFullScreen
                 />

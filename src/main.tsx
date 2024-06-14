@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom/client'
-import { App } from './app'
-import { CourseDetail } from './course-detail'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
-import { Text, ChakraProvider, extendTheme, Flex } from '@chakra-ui/react'
-
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+const Footer = lazy(() => import('./components/footer'));
 
 import '@fontsource/lato'
 
@@ -16,25 +15,13 @@ const theme = extendTheme({
   },
 })
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/curso/:uuid",
-    element: <CourseDetail />,
-  },
-]);
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <RouterProvider router={router} />
-
-      <Flex justifyContent="center" bgColor='#F1F3F6' py={4}>
-        <Text>Copyright © 2024 - Todos os direitos reservados</Text>
-      </Flex>
+      <Suspense fallback={"Carregando..."}>
+        <RouterProvider router={router} />
+        <Footer />
+      </Suspense>
     </ChakraProvider>
   </React.StrictMode>,
 )

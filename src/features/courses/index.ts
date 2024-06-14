@@ -1,0 +1,1 @@
+export { CourseList } from './components/course-list/course-list'
